@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Course</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional styling for the back button */
+    .back-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .back-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="sql-container">
+    <h2>SQL Learning Content</h2>
+
+    <!-- Introduction Section -->
+    <div class="learning-section">
+      <h3>Introduction to SQL</h3>
+      <p>
+        SQL (Structured Query Language) is used to interact with databases. It is the standard language for querying and manipulating relational databases. SQL is supported by many database systems such as MySQL, PostgreSQL, SQLite, Oracle, and Microsoft SQL Server.
+      </p>
+    </div>
+
+    <!-- SQL Basics -->
+    <div class="learning-section">
+      <h3>SQL Basics</h3>
+      <ul>
+        <li>Creating Tables: <code>CREATE TABLE table_name (column_name datatype, ...)</code></li>
+        <li>Inserting Data: <code>INSERT INTO table_name (columns) VALUES (values)</code></li>
+        <li>Selecting Data: <code>SELECT * FROM table_name</code></li>
+        <li>Updating Data: <code>UPDATE table_name SET column=value WHERE condition</code></li>
+        <li>Deleting Data: <code>DELETE FROM table_name WHERE condition</code></li>
+      </ul>
+    </div>
+
+    <!-- Data Types in SQL -->
+    <div class="learning-section">
+      <h3>Common SQL Data Types</h3>
+      <ul>
+        <li><strong>INT</strong>: Integer values</li>
+        <li><strong>VARCHAR</strong>: Variable-length string</li>
+        <li><strong>TEXT</strong>: Long text data</li>
+        <li><strong>DATE</strong>: Date values (YYYY-MM-DD)</li>
+        <li><strong>DECIMAL</strong>: Precise numeric values (e.g., 10.2 for 2 decimal places)</li>
+        <li><strong>BOOLEAN</strong>: True/False values</li>
+      </ul>
+    </div>
+
+    <!-- SQL Clauses -->
+    <div class="learning-section">
+      <h3>Key SQL Clauses</h3>
+      <ul>
+        <li><strong>WHERE</strong>: Filters rows based on a condition. Example: <code>SELECT * FROM employees WHERE salary > 50000;</code></li>
+        <li><strong>GROUP BY</strong>: Groups rows sharing a property. Example: <code>SELECT department, COUNT(*) FROM employees GROUP BY department;</code></li>
+        <li><strong>HAVING</strong>: Filters groups after aggregation. Example: <code>SELECT department, COUNT(*) FROM employees GROUP BY department HAVING COUNT(*) > 5;</code></li>
+        <li><strong>ORDER BY</strong>: Sorts results. Example: <code>SELECT * FROM employees ORDER BY salary DESC;</code></li>
+        <li><strong>LIMIT</strong>: Restricts the number of rows returned. Example: <code>SELECT * FROM employees LIMIT 10;</code></li>
+      </ul>
+    </div>
+
+    <!-- SQL Joins -->
+    <div class="learning-section">
+      <h3>SQL Joins</h3>
+      <p>Joins are used to combine rows from two or more tables based on a related column.</p>
+      <ul>
+        <li><strong>INNER JOIN</strong>: Returns matching rows from both tables.</li>
+        <li><strong>LEFT JOIN</strong>: Returns all rows from the left table, and matching rows from the right table.</li>
+        <li><strong>RIGHT JOIN</strong>: Returns all rows from the right table, and matching rows from the left table.</li>
+        <li><strong>FULL JOIN</strong>: Returns rows when there is a match in either table.</li>
+      </ul>
+      <pre><code>
+SELECT employees.name, departments.name
+FROM employees
+INNER JOIN departments
+ON employees.department_id = departments.id;
+      </code></pre>
+    </div>
+
+    <!-- SQL Functions -->
+    <div class="learning-section">
+      <h3>SQL Functions</h3>
+      <p>SQL includes built-in functions for performing calculations on data:</p>
+      <ul>
+        <li><strong>Aggregate Functions</strong>:
+          <ul>
+            <li><code>COUNT()</code>: Returns the number of rows.</li>
+            <li><code>SUM()</code>: Calculates the sum of a column.</li>
+            <li><code>AVG()</code>: Calculates the average value of a column.</li>
+            <li><code>MAX()</code> and <code>MIN()</code>: Returns the maximum or minimum value.</li>
+          </ul>
+        </li>
+        <li><strong>String Functions</strong>:
+          <ul>
+            <li><code>CONCAT()</code>: Concatenates strings. Example: <code>SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM employees;</code></li>
+            <li><code>UPPER()</code> and <code>LOWER()</code>: Converts strings to upper/lower case.</li>
+            <li><code>SUBSTRING()</code>: Extracts a substring from a string.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Interview Questions -->
+    <div class="learning-section">
+      <h3>SQL Interview Questions</h3>
+      <ol>
+        <li><strong>What is the difference between DELETE and TRUNCATE?</strong>
+          <p>
+            - <code>DELETE</code>: Removes specific rows and can have a WHERE clause. It is logged.
+            <br>
+            - <code>TRUNCATE</code>: Removes all rows without logging individual row deletions.
+          </p>
+        </li>
+        <li><strong>What is a Foreign Key?</strong>
+          <p>A Foreign Key is a column that establishes a relationship between two tables.</p>
+        </li>
+        <li><strong>How to find the nth highest salary in a table?</strong>
+          <pre><code>
+SELECT DISTINCT salary 
+FROM employees 
+ORDER BY salary DESC 
+LIMIT 1 OFFSET (n-1);
+          </code></pre>
+        </li>
+        <li><strong>What are SQL Indexes?</strong>
+          <p>Indexes are used to speed up the retrieval of rows by creating pointers to data in a table. They improve query performance but require additional storage space.</p>
+        </li>
+        <li><strong>What is the difference between UNION and UNION ALL?</strong>
+          <p>
+            - <code>UNION</code>: Combines result sets and removes duplicates.<br>
+            - <code>UNION ALL</code>: Combines result sets without removing duplicates.
+          </p>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Back Button -->
+    <a href="review1course.html" class="back-button">Back to Courses</a>
+  </div>
+</body>
+</html>

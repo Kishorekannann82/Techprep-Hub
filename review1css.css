@@ -1,0 +1,94 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set background gradient and font for the page */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+/* General container styles */
+.register-container, .login-container, .courses-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Style the form inputs and labels */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2575fc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #6a11cb;
+}
+
+/* Style for the courses page */
+.courses-container {
+  text-align: center;
+}
+
+.course-card {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.course-card:hover {
+  transform: scale(1.05);
+}
+
+.course-card h3 {
+  font-size: 18px;
+}
+
+.course-card p {
+  font-size: 14px;
+}

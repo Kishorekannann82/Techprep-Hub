@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Course</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #f9a825, #ff6f00);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .html-container {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+      width: 70%;
+      overflow-y: auto;
+      max-height: 90vh;
+    }
+
+    .html-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffd740;
+    }
+
+    .learning-section {
+      margin-bottom: 20px;
+    }
+
+    .learning-section h3 {
+      margin-bottom: 10px;
+      color: #ffca28;
+    }
+
+    .learning-section ul {
+      list-style-type: square;
+      margin-left: 20px;
+    }
+
+    pre {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    .tips {
+      background-color: #212121;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    .tips h4 {
+      color: #ffab00;
+    }
+
+    .tips ul {
+      margin-left: 20px;
+    }
+
+    .back-button {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff6f00;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #f9a825;
+    }
+  </style>
+</head>
+<body>
+  <div class="html-container">
+    <h2>HTML Learning Content</h2>
+
+    <div class="learning-section">
+      <h3>Introduction to HTML</h3>
+      <p>
+        HTML (HyperText Markup Language) is the standard language for creating web pages. It provides the basic structure of a website, which is enhanced and modified by CSS and JavaScript. HTML is easy to learn and widely used by developers worldwide.
+      </p>
+    </div>
+
+    <div class="learning-section">
+      <h3>Basic HTML Elements</h3>
+      <ul>
+        <li><strong>&lt;html&gt;</strong>: The root element of an HTML document.</li>
+        <li><strong>&lt;head&gt;</strong>: Contains metadata like the title and links to CSS or JavaScript files.</li>
+        <li><strong>&lt;body&gt;</strong>: Contains the content of the web page.</li>
+        <li><strong>&lt;h1&gt; to &lt;h6&gt;</strong>: Headings, with &lt;h1&gt; being the largest.</li>
+        <li><strong>&lt;p&gt;</strong>: Paragraphs for text content.</li>
+        <li><strong>&lt;a&gt;</strong>: Hyperlinks to navigate between pages or external links.</li>
+        <li><strong>&lt;img&gt;</strong>: Embeds images in the web page with attributes like <code>src</code> and <code>alt</code>.</li>
+        <li><strong>&lt;ul&gt; &amp; &lt;li&gt;</strong>: Unordered lists with list items.</li>
+        <li><strong>&lt;table&gt;</strong>: Defines a table structure with rows and columns.</li>
+        <li><strong>&lt;div&gt;</strong>: A container for grouping content.</li>
+      </ul>
+    </div>
+
+    <div class="learning-section">
+      <h3>HTML Attributes</h3>
+      <ul>
+        <li><strong>Global Attributes</strong>: Used with most elements (e.g., <code>id</code>, <code>class</code>, <code>style</code>).</li>
+        <li><strong>Inline Attributes</strong>: Apply specific styles directly to elements.</li>
+        <li><strong>Event Attributes</strong>: Handle JavaScript events (e.g., <code>onclick</code>, <code>onmouseover</code>).</li>
+      </ul>
+    </div>
+
+    <div class="learning-section">
+      <h3>Advanced HTML Concepts</h3>
+      <ul>
+        <li>Semantic HTML: Use elements like &lt;header&gt;, &lt;footer&gt;, &lt;article&gt;, &lt;section&gt; for better structure and accessibility.</li>
+        <li>Forms and Inputs: Build interactive forms with &lt;input&gt;, &lt;textarea&gt;, &lt;button&gt;, and attributes like <code>required</code> and <code>placeholder</code>.</li>
+        <li>Canvas and SVG: Create graphics directly in HTML using &lt;canvas&gt; or scalable vector graphics.</li>
+        <li>Media Tags: Use &lt;audio&gt; and &lt;video&gt; to embed media content seamlessly.</li>
+      </ul>
+    </div>
+
+    <div class="learning-section">
+      <h3>HTML Forms</h3>
+      <p>Forms are crucial for collecting user data. A simple example:</p>
+      <pre><code>
+&lt;form action="submit.php" method="post"&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" required&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+      </code></pre>
+    </div>
+
+    <div class="learning-section">
+      <h3>Interview Questions</h3>
+      <ul>
+        <li><strong>What is the difference between block-level and inline elements?</strong>
+          <p>Block-level elements take up the full width available (e.g., &lt;div&gt;, &lt;p&gt;), while inline elements take up only as much width as necessary (e.g., &lt;span&gt;, &lt;a&gt;).</p>
+        </li>
+        <li><strong>How do you include JavaScript in an HTML document?</strong>
+          <p>By using the &lt;script&gt; tag, either inline or by linking an external file.</p>
+        </li>
+        <li><strong>What are semantic tags?</strong>
+          <p>Tags that clearly describe their purpose and content, such as &lt;article&gt;, &lt;nav&gt;, and &lt;aside&gt;.</p>
+        </li>
+        <li><strong>What is the purpose of the &lt;meta&gt; tag?</strong>
+          <p>To provide metadata about the HTML document, such as character encoding and viewport settings.</p>
+        </li>
+        <li><strong>What is the difference between &lt;strong&gt; and &lt;b&gt; tags?</strong>
+          <p>The &lt;strong&gt; tag indicates importance, while the &lt;b&gt; tag is for stylistic bold text.</p>
+        </li>
+        <li><strong>How does the DOM relate to HTML?</strong>
+          <p>The Document Object Model (DOM) represents the structure of an HTML document as a tree, enabling dynamic manipulation using JavaScript.</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tips">
+      <h4>Pro Tips</h4>
+      <ul>
+        <li>Always use semantic HTML to improve accessibility and SEO.</li>
+        <li>Validate your HTML using tools like the W3C Validator.</li>
+        <li>Keep your structure clean by separating content (HTML), styling (CSS), and behavior (JavaScript).</li>
+        <li>Learn browser developer tools to debug and analyze your HTML.</li>
+        <li>Use comments (<code>&lt;!-- comment --&gt;</code>) to document your code for better readability.</li>
+      </ul>
+    </div>
+
+    <a href="review1course.html" class="back-button">Back to Courses</a>
+  </div>
+</body>
+</html>

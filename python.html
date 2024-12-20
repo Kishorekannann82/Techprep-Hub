@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Course</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    /* Page Container */
+    .python-container {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 800px;
+      width: 90%;
+      margin: 20px auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffd700;
+    }
+
+    /* Styling for Sections */
+    .learning-section {
+      margin-bottom: 20px;
+    }
+
+    .learning-section h3 {
+      margin-bottom: 10px;
+      color: #ffd700;
+    }
+
+    .learning-section ul, .learning-section ol {
+      margin-left: 20px;
+    }
+
+    .learning-section pre {
+      background-color: #333;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 14px;
+      color: #f1f1f1;
+    }
+
+    /* Links */
+    a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Code Styling */
+    pre {
+      background-color: #1e1e1e;
+      color: #e8e8e8;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    /* Back Button */
+    .back-button {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ffd700;
+      color: black;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #f1c40f;
+    }
+  </style>
+</head>
+<body>
+  <div class="python-container">
+    <h2>Python Course</h2>
+
+    <!-- Learning Sections -->
+    <div class="learning-section">
+      <h3>Introduction to Python</h3>
+      <p>
+        Python is a versatile, high-level programming language known for its simplicity and readability. It is widely used in web development, data science, machine learning, automation, and more.
+      </p>
+    </div>
+
+    <div class="learning-section">
+      <h3>Getting Started</h3>
+      <ol>
+        <li>Install Python: Download from <a href="https://python.org" target="_blank">python.org</a>.</li>
+        <li>Set up an IDE: Use PyCharm, VS Code, or Jupyter Notebook.</li>
+        <li>Write your first program:
+          <pre><code>
+# First Python Program
+print("Hello, World!")
+          </code></pre>
+        </li>
+      </ol>
+    </div>
+
+    <div class="learning-section">
+      <h3>Python Basics</h3>
+      <ul>
+        <li>Data Types: <code>int, float, str, list, tuple, dict, set</code></li>
+        <li>Control Structures: <code>if, for, while</code></li>
+        <li>Functions: 
+          <pre><code>
+def greet(name):
+    return f"Hello, {name}!"
+          </code></pre>
+        </li>
+        <li>File Handling:
+          <pre><code>
+with open("example.txt", "w") as file:
+    file.write("This is a Python file!")
+          </code></pre>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Practical Knowledge -->
+    <div class="learning-section">
+      <h3>Practical Examples</h3>
+      <h4>1. Fibonacci Sequence</h4>
+      <pre><code>
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        print(a, end=" ")
+        a, b = b, a + b
+
+fibonacci(10)
+      </code></pre>
+
+      <h4>2. Sorting a List</h4>
+      <pre><code>
+numbers = [5, 2, 9, 1, 5, 6]
+sorted_numbers = sorted(numbers)
+print("Sorted List:", sorted_numbers)
+      </code></pre>
+
+      <h4>3. Web Scraping</h4>
+      <pre><code>
+import requests
+from bs4 import BeautifulSoup
+
+response = requests.get("https://example.com")
+soup = BeautifulSoup(response.text, "html.parser")
+print(soup.title.text)
+      </code></pre>
+    </div>
+
+    <!-- Interview Questions -->
+    <div class="learning-section">
+      <h3>Python Interview Questions</h3>
+      <ol>
+        <li>
+          <strong>What are Python's key features?</strong>
+          <p>Easy syntax, interpreted, dynamically typed, extensive libraries, and platform-independent.</p>
+        </li>
+        <li>
+          <strong>What are Python's data types?</strong>
+          <p>
+            Basic: <code>int, float, str</code> <br>
+            Collections: <code>list, tuple, set, dict</code>
+          </p>
+        </li>
+        <li>
+          <strong>How do you handle exceptions in Python?</strong>
+          <pre><code>
+try:
+    x = 1 / 0
+except ZeroDivisionError as e:
+    print("Error:", e)
+          </code></pre>
+        </li>
+        <li>
+          <strong>What is the difference between a list and a tuple?</strong>
+          <p>
+            Lists are mutable, tuples are immutable.
+          </p>
+        </li>
+        <li>
+          <strong>Write a Python program to reverse a string.</strong>
+          <pre><code>
+string = "Python"
+print(string[::-1])
+          </code></pre>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Back Button -->
+    <a href="review1course.html" class="back-button">Back to Courses</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Interview Questions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .interview-container {
+      max-width: 800px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      margin-bottom: 15px;
+      padding: 15px;
+      background-color: #333;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .question h3 {
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+
+    .question p {
+      margin: 0;
+    }
+
+    pre {
+      background-color: #444;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    .back-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ffd700;
+      color: black;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-button:hover {
+      background-color: #f1c40f;
+    }
+  </style>
+</head>
+<body>
+  <div class="interview-container">
+    <h1>SQL Interview Questions</h1>
+
+    <div class="question">
+      <h3>1. What is SQL?</h3>
+      <p>SQL (Structured Query Language) is a standard language for accessing and manipulating databases.</p>
+    </div>
+
+    <div class="question">
+      <h3>2. What is the difference between DELETE and TRUNCATE?</h3>
+      <p>
+        - <b>DELETE:</b> Removes specific rows from a table and can have a WHERE clause. Logs individual row deletions.<br>
+        - <b>TRUNCATE:</b> Removes all rows from a table and resets identity. Faster but not logged row by row.
+      </p>
+    </div>
+	<div class="question">
+      <h3>3. What is a Primary Key?</h3>
+      <p>A Primary Key uniquely identifies each record in a table. It must have unique values and cannot be NULL.</p>
+    </div>
+	<div class="question">
+      <h3>4. Explain JOINs in SQL.</h3>
+      <p>JOINs are used to combine rows from two or more tables:</p>
+      <ul>
+        <li><b>INNER JOIN:</b> Returns records with matching values in both tables.</li>
+        <li><b>LEFT JOIN:</b> Returns all records from the left table and matching records from the right table.</li>
+        <li><b>RIGHT JOIN:</b> Returns all records from the right table and matching records from the left table.</li>
+        <li><b>FULL JOIN:</b> Returns all records when there is a match in either table.</li>
+      </ul>
+    </div>
+	<div class="question">
+      <h3>5. How do you retrieve duplicate records from a table?</h3>
+      <pre><code>
+SELECT column_name, COUNT(*)
+FROM table_name
+GROUP BY column_name
+HAVING COUNT(*) > 1;
+      </code></pre>
+    </div>
+	<div class="question">
+      <h3>6. What is a Foreign Key?</h3>
+      <p>A Foreign Key is a column that creates a relationship between two tables by referencing the Primary Key of another table.</p>
+    </div>
+	<div class="question">
+      <h3>7. What are ACID properties?</h3>
+      <p>ACID stands for:</p>
+      <ul>
+        <li><b>Atomicity:</b> Transactions are all-or-nothing.</li>
+        <li><b>Consistency:</b> Ensures data remains consistent before and after transactions.</li>
+        <li><b>Isolation:</b> Transactions do not affect each other.</li>
+        <li><b>Durability:</b> Once a transaction is committed, it remains permanent.</li>
+      </ul>
+    </div>
+	<div class="question">
+      <h3>8. How do you find the nth highest salary in a table?</h3>
+      <pre><code>
+SELECT DISTINCT salary
+FROM employees
+ORDER BY salary DESC
+LIMIT n-1, 1;
+      </code></pre>
+    </div>
+	<div class="question">
+      <h3>9. What is the difference between WHERE and HAVING?</h3>
+      <p>
+        - <b>WHERE:</b> Filters rows before grouping.<br>
+        - <b>HAVING:</b> Filters groups after aggregation.
+      </p>
+    </div>
+	<div class="question">
+      <h3>10. What are indexes in SQL?</h3>
+      <p>Indexes are used to speed up data retrieval from a table by creating pointers to the data.</p>
+    </div>
+	
+    <div class="question">
+      <h3>11. How can you improve query performance?</h3>
+      <ul>
+        <li>Use indexes on frequently searched columns.</li>
+        <li>Avoid SELECT *; only fetch required columns.</li>
+        <li>Use JOINS instead of subqueries where possible.</li>
+        <li>Analyze query execution plans to find bottlenecks.</li>
+      </ul>
+    </div>
+	<div class="question">
+      <h3>12. Explain the difference between UNION and UNION ALL.</h3>
+      <p>
+        - <b>UNION:</b> Combines results from two queries and removes duplicates.<br>
+        - <b>UNION ALL:</b> Combines results but includes duplicates.
+      </p>
+    </div>
+	<div class="question">
+      <h3>13. How do you create a stored procedure?</h3>
+      <pre><code>
+CREATE PROCEDURE procedure_name AS
+BEGIN
+  -- SQL statements
+END;
+      </code></pre>
+    </div>
+	<div class="question">
+      <h3>14. What is the use of the GROUP BY clause?</h3>
+      <p>The GROUP BY clause groups rows that have the same values into summary rows, often used with aggregate functions like COUNT, SUM, AVG, etc.</p>
+    </div>
+	<div class="question">
+      <h3>15. What are triggers in SQL?</h3>
+      <p>Triggers are special procedures that automatically execute in response to certain events on a table (INSERT, UPDATE, DELETE).</p>
+    </div>
+	<div class="question">
+      <h3>16. What is a view in SQL?</h3>
+      <p>A view is a virtual table based on the result of a SELECT query.</p>
+    </div>
+	
+    <div class="question">
+      <h3>17. How do you handle NULL values in SQL?</h3>
+      <p>Use functions like IS NULL, IS NOT NULL, and COALESCE to manage NULL values.</p>
+    </div>
+	
+    <div class="question">
+      <h3>18. Explain the difference between DROP, DELETE, and TRUNCATE.</h3>
+      <ul>
+        <li><b>DROP:</b> Deletes the table and its structure.</li>
+        <li><b>DELETE:</b> Deletes specific rows but retains the table structure.</li>
+        <li><b>TRUNCATE:</b> Deletes all rows and resets table identity.</li>
+      </ul>
+    </div>
+	
+    <div class="question">
+      <h3>19. How do you add a new column to an existing table?</h3>
+      <pre><code>
+ALTER TABLE table_name ADD column_name datatype;
+      </code></pre>
+    </div>
+<div class="question">
+      <h3>20. What is a cursor in SQL?</h3>
+      <p>A cursor is a database object used to retrieve, manipulate, and navigate through a result set row by row.</p>
+
+    <!-- Add other questions here -->
+
+    <!-- Back Button -->
+    <a href="review1course.html" class="back-button">Back to Courses</a>
+  </div>
+</body>
+</html>
